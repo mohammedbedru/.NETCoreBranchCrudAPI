@@ -75,7 +75,8 @@ namespace BranchCrudAPI.Controllers
                 }
             }
 
-            return NoContent();
+            //return NoContent();
+            return Ok(new { Message = "Branch updated successfully" });
         }
 
         // POST: api/Branches
@@ -109,7 +110,8 @@ namespace BranchCrudAPI.Controllers
             _context.Branch.Remove(branch);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            //return NoContent();
+            return Ok(new { Message = "Branch deleted successfully" });
         }
 
         private bool BranchExists(int id)
